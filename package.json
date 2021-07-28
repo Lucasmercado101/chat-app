@@ -1,5 +1,7 @@
 {
-  "scripts": {},
+  "scripts": {
+    "start": "concurrently \"cd back && pnpm run start\" \"cd front && pnpm run start\""
+  },
   "devDependencies": {
     "concurrently": "^6.2.0"
   }
