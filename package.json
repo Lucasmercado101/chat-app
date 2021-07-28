@@ -1,0 +1,6 @@
+{
+  "scripts": {},
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
