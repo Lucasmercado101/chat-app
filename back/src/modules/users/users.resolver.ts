@@ -6,10 +6,10 @@ import { UsersService } from './user.service';
 export class UsersResolver {
   constructor(private usersService: UsersService) {}
 
-  @Query(() => User)
-  async user(@Args('id', { type: () => Int }) id: number) {
-    return this.usersService.findOneById(id);
-  }
+  // @Query(() => User)
+  // async user(@Args('id', { type: () => Int }) id: number) {
+  //   return this.usersService.findOneById(id);
+  // }
 
   @Query(() => [User], { name: 'users' })
   async getUsers() {
@@ -17,10 +17,7 @@ export class UsersResolver {
   }
 
   @Mutation(() => User)
-  async createUser(
-    @Args('id', { type: () => Int }) id: number,
-    @Args('userName') userName: string,
-  ) {
-    return this.usersService.create({ id, userName });
+  async createUser(@Args('userName') userName: string) {
+    return this.usersService.create({ userName });
   }
 }
