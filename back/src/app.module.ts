@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 import * as path from 'path';
+import { EventsModule } from './modules/events/events.module';
 import { UsersModule } from './modules/users/users.module';
 
 @Module({
@@ -13,6 +14,7 @@ import { UsersModule } from './modules/users/users.module';
     }),
     MongooseModule.forRoot(process.env.MONGO_URI),
     UsersModule,
+    EventsModule,
   ],
 })
 export class AppModule {}
