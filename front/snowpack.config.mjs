@@ -6,6 +6,7 @@ export default {
   },
   plugins: [
     [
+      '@snowpack/plugin-dotenv',
       '@snowpack/plugin-typescript',
       {
         /* Yarn PnP workaround: see https://www.npmjs.com/package/@snowpack/plugin-typescript */

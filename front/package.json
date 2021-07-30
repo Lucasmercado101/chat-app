@@ -8,11 +8,14 @@
   },
   "dependencies": {
     "canvas-confetti": "^1.2.0",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.19.1"
   },
   "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.1.0",
     "@snowpack/plugin-typescript": "^1.2.1",
     "@types/canvas-confetti": "^1.0.0",
     "@types/react": "^17.0.15",
