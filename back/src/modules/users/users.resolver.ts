@@ -4,7 +4,7 @@ import { UsersService } from './user.service';
 
 @Resolver(() => User)
 export class UsersResolver {
-  constructor(private usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) {}
 
   @Query(() => User)
   async user(@Args('id') id: string) {
