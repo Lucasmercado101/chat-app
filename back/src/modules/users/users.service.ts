@@ -17,7 +17,11 @@ export class UsersService {
     return `This action returns all users`;
   }
 
-  findOne(id: string): Promise<UserDocument> {
+  findOne(userName: string): Promise<UserDocument> {
+    return this.userModel.findOne({ userName }).exec();
+  }
+
+  findOneById(id: string): Promise<UserDocument> {
     return this.userModel.findById(id).exec();
   }
 
