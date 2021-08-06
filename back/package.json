@@ -28,6 +28,7 @@
     "@nestjs/mongoose": "^8.0.0",
     "@nestjs/passport": "^8.0.1",
     "@nestjs/platform-express": "^7.6.15",
+    "express-session": "^1.17.2",
     "mongoose": "^5.13.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

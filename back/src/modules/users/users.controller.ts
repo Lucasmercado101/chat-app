@@ -6,11 +6,13 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserDocument } from './user.schema';
+import { AuthenticatedGuard } from '../auth/authenticated.guard';
 
 function responseUserDto(user: UserDocument) {
   return {
@@ -33,9 +35,10 @@ export class UsersController {
     return responseUserDto(await this.usersService.create(createUserDto));
   }
 
+  @UseGuards(AuthenticatedGuard)
   @Get(':id')
   async findOne(@Param('id') id: string): Promise<ResponseUserDto | undefined> {
-    return responseUserDto(await this.usersService.findOne(id));
+    return responseUserDto(await this.usersService.findOneById(id));
   }
 
   // @Patch(':id')
