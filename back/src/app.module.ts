@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
 import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './modules/users/users.module';
 import { MessagesModule } from './modules/messages/messages.module';
@@ -12,6 +11,5 @@ import { MongooseModule } from '@nestjs/mongoose';
     MessagesModule,
     MongooseModule.forRoot(process.env.MONGO_URI),
   ],
-  controllers: [AppController],
 })
 export class AppModule {}
