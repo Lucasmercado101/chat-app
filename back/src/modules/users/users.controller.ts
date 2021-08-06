@@ -33,14 +33,9 @@ export class UsersController {
     return responseUserDto(await this.usersService.create(createUserDto));
   }
 
-  @Get()
-  findAll() {
-    return this.usersService.findAll();
-  }
-
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(+id);
+  async findOne(@Param('id') id: string): Promise<ResponseUserDto> {
+    return responseUserDto(await this.usersService.findOne(id));
   }
 
   @Patch(':id')
